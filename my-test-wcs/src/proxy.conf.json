@@ -1,0 +1,9 @@
+{
+	"/api/*": 
+		{
+			"target": "http://hp-api.herokuapp.com",
+			"segure": false,
+			"changeOrigin":true,
+			"loglevel": "debug"
+		}
+}

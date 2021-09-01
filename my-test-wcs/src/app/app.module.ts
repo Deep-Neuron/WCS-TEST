@@ -7,6 +7,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MaterialAngularModule } from './material-angular/material-angular.module';
+import { AppRoutingModule } from './app-routing.module';
+
+import { HttpClientModule } from '@angular/common/http';
+import { SharedsModule } from './shareds/shareds.module';
+//import { ReusableTableComponent } from './shareds/reusable-table/reusable-table.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -17,7 +25,10 @@ import { MaterialAngularModule } from './material-angular/material-angular.modul
     BrowserAnimationsModule,
 	FormsModule,
     ReactiveFormsModule,
-	MaterialAngularModule
+	MaterialAngularModule,
+	AppRoutingModule,
+	HttpClientModule,
+	SharedsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
