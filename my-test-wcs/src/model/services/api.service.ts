@@ -7,6 +7,7 @@ import { from } from 'rxjs';
 //DAO
 import { Characters } from '../dao/characters.dao';
 import { Student } from '../dao/student.dao';
+import { Teacher } from '../dao/teacher.dao';
 
 //Services
 import { ParamService } from './param.service';
@@ -22,6 +23,7 @@ export class ApiService {
 	rootConex: string = 'http://hp-api.herokuapp.com/api/';
 	charactersConex: string = '/api/characters/house/';
 	studentsConex: string = '/api/characters/students';
+	teachersConex: string = '/api/characters/staff';
 	
 	public dataLocal: any[] = [];
 	
@@ -37,6 +39,11 @@ export class ApiService {
 	getStudents(): Observable<Student[]> {
 		return this.HTTP.get<Student[]>(this.studentsConex);	
 	}
+	
+	/************************ GET Teachers ****************************************/ 
+	getTeachers(): Observable<Teacher[]> {
+		return this.HTTP.get<Teacher[]>(this.teachersConex);	
+	}	
 	
 	
 	/************************ Verify suppoort browser storage ****************************************/ 

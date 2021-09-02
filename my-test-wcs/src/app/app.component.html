@@ -320,10 +320,6 @@
 		<button mat-button [matMenuTriggerFor]="charactersMenu">Personajes</button>
  		<mat-menu #charactersMenu="matMenu" yPosition="above">
 			<button mat-menu-item routerLink="/characters/house" routerLinkActive="active">Casa de Hechicería</button>
-			<button mat-menu-item>Exp. #3 </button>
-			<button mat-menu-item>Exp. #4 </button>
-			<button mat-menu-item>Exp. #4 </button>
-			<button mat-menu-item>Exp. #5 </button>
 		</mat-menu>
 		
 		<button mat-button [matMenuTriggerFor]="studentsMenu">Estudiantes</button>
@@ -331,16 +327,13 @@
 			<button mat-menu-item routerLink="/students/list" routerLinkActive="active">Consultar</button>
 			<button mat-menu-item routerLink="/students/request" routerLinkActive="active">Agregar</button>
 			<button mat-menu-item routerLink="/students/requestPending" routerLinkActive="active">Solicitudes</button>
-			<button mat-menu-item>Experiment #4</button>
-			<button mat-menu-item>Experiment #5</button>
+
 		</mat-menu>
 		
 		<button mat-button [matMenuTriggerFor]="teachersMenu">Profesores</button>
 		<mat-menu #teachersMenu="matMenu" yPosition="above">
-			<button mat-menu-item>Consultar</button>
-			<button mat-menu-item>Experiment #3</button>
-			<button mat-menu-item>Experiment #4</button>
-			<button mat-menu-item>Experiment #5</button>
+			<button mat-menu-item routerLink="/teachers/list" routerLinkActive="active">Consultar</button>
+
 		</mat-menu>		
 		
 	</nav>
