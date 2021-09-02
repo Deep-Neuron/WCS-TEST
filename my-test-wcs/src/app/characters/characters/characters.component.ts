@@ -30,7 +30,7 @@ export class CharactersComponent implements OnInit {
 		
 	}
 	
-	/*********************** UPDATE LANGUAGE APP ***********************/
+	/*********************** GET HOUSE NAME LIST ***********************/
 	getHouseName(val: string) {
 		this.apiCtrl.getCharactersHouse(val).pipe(
 		).subscribe(

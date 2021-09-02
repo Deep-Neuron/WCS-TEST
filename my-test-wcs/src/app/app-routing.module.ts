@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const appRoutes: Routes = [
 	{ path: 'characters', loadChildren: () => import('./characters/characters.module').then(m => m.CharactersModule) },
+	{ path: 'students', loadChildren: () => import('./students/students.module').then(m => m.StudentsModule) },
 	//{ path: 'perceptrons', loadChildren: () => import('./perceptrons/perceptrons.module').then(m => m.PerceptronsModule) },
 	//{ path: 'adalines', loadChildren: () => import('./adalines/adalines.module').then(m => m.AdalinesModule) },
 	//{ path: 'config', component: ConfigComponent },

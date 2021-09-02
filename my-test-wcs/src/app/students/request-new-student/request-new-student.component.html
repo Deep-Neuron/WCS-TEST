@@ -1,0 +1,21 @@
+<form [formGroup]="newStudentForm">
+	<div class="example-container">
+		<mat-form-field [hideRequiredMarker]="true" appearance="outline">
+			<mat-label>Nombre Estudiante</mat-label>
+			<input matInput placeholder="Nombre Estudiante" autocomplete  [formControl]="nombre" required>
+			<mat-hint>Ingresar Nombre Estudiante</mat-hint>		
+			<mat-error *ngIf="nombre.invalid">{{getErrorMessageNombre()}}</mat-error>
+		</mat-form-field>	
+		<br>
+		<mat-form-field [hideRequiredMarker]="true" appearance="outline">
+			<mat-label>Patronus</mat-label>
+			<input matInput placeholder="Patronus" autocomplete  [formControl]="patronus" required>
+			<mat-hint>Ingresar Patronus</mat-hint>		
+			<mat-error *ngIf="patronus.invalid">{{getErrorMessagePatronus()}}</mat-error>
+		</mat-form-field>		
+	
+	</div>
+	<button (click)="onSubmit()">Ingresar</button>
+	<br>
+	<button (click)="clear()">Limpiar Data LOcal</button>
+</form>	

@@ -328,9 +328,9 @@
 		
 		<button mat-button [matMenuTriggerFor]="studentsMenu">Estudiantes</button>
 		<mat-menu #studentsMenu="matMenu" yPosition="above">
-			<button mat-menu-item>Consultar</button>
-			<button mat-menu-item>Agregar</button>
-			<button mat-menu-item>Experiment #3</button>
+			<button mat-menu-item routerLink="/students/list" routerLinkActive="active">Consultar</button>
+			<button mat-menu-item routerLink="/students/request" routerLinkActive="active">Agregar</button>
+			<button mat-menu-item routerLink="/students/requestPending" routerLinkActive="active">Solicitudes</button>
 			<button mat-menu-item>Experiment #4</button>
 			<button mat-menu-item>Experiment #5</button>
 		</mat-menu>

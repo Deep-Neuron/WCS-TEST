@@ -15,8 +15,7 @@ export class AgePipe implements PipeTransform {
   //}
 
 	transform(value: any, ...args: any[]): number {
-		console.log(value);
-		
+				
 		try{
 			
 			if (typeof(value) === 'string') {

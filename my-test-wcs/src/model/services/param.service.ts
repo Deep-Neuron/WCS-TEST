@@ -12,5 +12,9 @@ export class ParamService {
 		{value: 'ravenclaw', viewValue: 'ravenclaw'},
 		{value: 'hufflepuff', viewValue: 'hufflepuff'}
 	];
+	
+	labelStorage: string = 'newStudentRequestPending';
+	labelNombre: string = 'nombre';
+	labelPatronus: string = 'patronus';
 	constructor() { }
 }
