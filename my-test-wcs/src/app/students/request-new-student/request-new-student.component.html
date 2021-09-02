@@ -1,3 +1,6 @@
+<div style="text-align: center;">
+	<h4>Agregar solicitud de nuevo estudiante</h4>
+
 <form [formGroup]="newStudentForm">
 	<div class="example-container">
 		<mat-form-field [hideRequiredMarker]="true" appearance="outline">
@@ -16,6 +19,7 @@
 	
 	</div>
 	<button (click)="onSubmit()">Ingresar</button>
-	<br>
-	<button (click)="clear()">Limpiar Data LOcal</button>
+	<br><br><br>
+	<button color="warn" (click)="clear()">Limpiar Data Local</button>
 </form>	
+</div>

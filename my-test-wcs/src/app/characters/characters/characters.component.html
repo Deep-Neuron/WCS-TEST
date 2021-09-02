@@ -1,6 +1,9 @@
-<mat-label>Seleccionar la Casa de Hechicería</mat-label>
-<mat-select [(value)]="selectedOptionHouseName">
-	<mat-option [value]="option.value" *ngFor="let option of paramCtrl.housesName" (click)="getHouseName(option.value)">{{ option.viewValue }}</mat-option>
-</mat-select>
-<p>Tú seleccionaste: {{selectedOptionHouseName}}</p>
+<div style="margin-left: 10%; ">
+	<mat-label>Seleccionar la Casa de Hechicería</mat-label>
+	<mat-select [(value)]="selectedOptionHouseName">
+		<mat-option [value]="option.value" *ngFor="let option of paramCtrl.housesName" (click)="getHouseName(option.value)">{{ option.viewValue }}</mat-option>
+	</mat-select>
+	<p>Tú seleccionaste: <b>{{selectedOptionHouseName}}</b></p>
+</div>
 <app-reusable-table [items]="theCharacters"></app-reusable-table>
+
