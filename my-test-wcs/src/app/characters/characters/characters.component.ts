@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 //Services
-import { ParamService } from '../../../model/services/param.service';
 import { ApiService } from '../../../model/services/api.service';
+import { ParamService } from '../../../model/services/param.service';
+import { UtilService } from '../../../common/util.service';
 
 //DAO
 import { Characters } from '../../../model/dao/characters.dao';
+
+//Class
+import { GlobalConstants } from '../../../common/global-constants';
 
 
 
@@ -17,11 +21,12 @@ import { Characters } from '../../../model/dao/characters.dao';
 export class CharactersComponent implements OnInit {
 
 	selectedOptionHouseName: string = '';
+	responseSelect: string = '';
 	theCharacters: Characters[];
+	myGlobalConstants: GlobalConstants = new GlobalConstants();
 	
 
-	constructor(public paramCtrl: ParamService,
-		public apiCtrl: ApiService) { 
+	constructor(public apiCtrl: ApiService, public utilCtrl: UtilService, public paramCtrl: ParamService) { 
 		
 	}
 
@@ -32,11 +37,13 @@ export class CharactersComponent implements OnInit {
 	
 	/*********************** GET HOUSE NAME LIST ***********************/
 	getHouseName(val: string) {
+		this.responseSelect = val;
+		let charactersTMP: Characters[] = [];
 		this.apiCtrl.getCharactersHouse(val).pipe(
 		).subscribe(
 			res => { // success path
-				this.theCharacters = res;
-				this.theCharacters.sort((a,b) => a.name.localeCompare(b.name));
+				charactersTMP = res;
+				this.theCharacters = this.utilCtrl.sortArray(charactersTMP);
 				console.log(this.theCharacters);
 			},
 			error => {

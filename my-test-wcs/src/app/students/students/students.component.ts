@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 //Services
 import { ApiService } from '../../../model/services/api.service';
+import { UtilService } from '../../../common/util.service';
 
 //DAO
 import { Student } from '../../../model/dao/student.dao';
@@ -15,7 +16,7 @@ export class StudentsComponent implements OnInit {
 
 	theStudents: Student[];
 
-	constructor(public apiCtrl: ApiService) { }
+	constructor(public apiCtrl: ApiService, public utilCtrl: UtilService) { }
 
 	ngOnInit(): void {
 		this.getStudentsList();
@@ -23,11 +24,13 @@ export class StudentsComponent implements OnInit {
 	
 	/*********************** GET STUDENTS LIST ***********************/
 	getStudentsList() {
+		let studentsTMP: Student[] = [];
 		this.apiCtrl.getStudents().pipe(
 		).subscribe(
 			res => { // success path
-				this.theStudents = res;
-				this.theStudents.sort((a,b) => a.name.localeCompare(b.name));
+				studentsTMP = res;
+				this.theStudents = this.utilCtrl.sortArray(studentsTMP);
+				//this.theStudents.sort((a,b) => a.name.localeCompare(b.name));
 				console.log(this.theStudents);
 			},
 			error => {

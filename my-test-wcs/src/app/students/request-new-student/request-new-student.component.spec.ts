@@ -2,13 +2,16 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RequestNewStudentComponent } from './request-new-student.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 describe('RequestNewStudentComponent', () => {
   let component: RequestNewStudentComponent;
   let fixture: ComponentFixture<RequestNewStudentComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RequestNewStudentComponent ]
+      declarations: [ RequestNewStudentComponent ],
+	  imports: [HttpClientModule]
     })
     .compileComponents();
   });
